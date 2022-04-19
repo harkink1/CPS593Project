@@ -30,3 +30,24 @@ input[type="submit"] {
     text-transform: uppercase;
     margin: 30px auto 10px auto;
 }
+
+ul {
+    text-align: center;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    width: auto;
+    background-color: aliceblue;
+}
+
+li a {
+    display: block;
+    color: darkslategrey;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: aliceblue;
+    color: black;
+}
