@@ -5,18 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="styles\style.css">
-    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <ul>
         <li><a href="register.html">Register</a></li>
         <li><a href="login.html">Login</a></li>
-        <li><a href="post.html">Post</a></li>
-        <li><a href="comments.html">Comments</a></li>
-        <li><a href="following.html">Following</a></li>
     </ul> 
     <form id="register-form">
+        <p class = "error"></p>
         <label for="first name">First Name:</label><br>
         <input type="text" id="first_name" name="first_name"><br>
         <label for="last name">Last Name:</label><br>
@@ -25,9 +22,11 @@
         <input type="text" id="birthdate" name="birthdate"><br>
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username"><br>
-        <label for="pwd">Password:</label><br>
-        <input type="password" id="pwd" name="pwd"><br>
-        <input type="submit" value="Submit">
+        <label for="pswd">Password:</label><br>
+        <input type="password" id="pswd" name="pswd"><br>
+        <input type="submit" value="submit">
     </form>
+    <script  src="main.js"></script>
+    <script  src="user-script.js"></script>
 </body>
 </html>
