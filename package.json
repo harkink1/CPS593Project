@@ -1,10 +1,10 @@
 {
   "name": "cps593-project",
   "version": "1.0.0",
-  "description": "final project for CPS593: Social Media Website",
-  "main": "script.js",
+  "description": "final project for CPS593",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon script.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
