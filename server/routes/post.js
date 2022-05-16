@@ -14,7 +14,7 @@ router
 
   .post('/create', async (req, res) => {
     try {
-      const post = await Post.create(req.body);
+      const post = await Post.createPost(req.body);
       console.log(post)
       res.send({...post, contents})
     } catch(error) {

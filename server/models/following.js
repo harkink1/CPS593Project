@@ -11,3 +11,41 @@ async function createTable() {
     await con.query(sql);
 }
 createTable();
+
+let getFollows = async () => {
+    const sql = `SELECT * FROM following`;
+    return await con.query(sql);
+  };
+  
+  async function getFollow(follow) { //retrieve follows
+    let sql;
+    if(follow.count>0) { //if have more than zero follow, show number
+      sql = `SELECT * FROM following
+        WHERE count = ${follow.count}
+      `;
+    } else {
+      throw Error('Not followed/following!') //have/are no follow
+    }
+  
+    return await con.query(sql);
+  }
+
+  async function addFollow(follow) { //add a new follow
+  
+    const sql = `INSERT INTO following (count)
+      VALUES ("${follow.followId}")
+    `;
+  
+    const insert = await con.query(sql);
+    const newFollow = await getFollow(follow);
+    return newFollow[0];
+  }
+
+  async function removeFollow(followId) {
+    const sql = `DELETE FROM following 
+      WHERE follow_id = ${followId}
+    `;
+    await con.query(sql);
+   
+  }
+  module.exports = { getFollows, addFollow, getFollow, removeFollow, createTable };
