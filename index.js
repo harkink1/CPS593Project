@@ -5,11 +5,14 @@ require('dotenv').config();
 
 
 const userRoutes = require('./server/routes/user');
+const postRoutes = require('./server/routes/post');
+const commentRoutes = require('./server/routes/comment');
+const followRoutes = require('./server/routes/following');
 
 app.use(express.json()); //To parse JSON bodies (Applicable for Express 4.16+)
 
 app.use(express.static(__dirname + "/public"));
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/login.html')))
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public', 'login.html')))
 
 //CORS middleware
 app.use(function(req, res, next) {
@@ -20,6 +23,9 @@ app.use(function(req, res, next) {
 });
 
 app.use("/users", userRoutes);
+app.use("/comments", commentRoutes);
+app.use("/following", followRoutes);
+app.use("/posts", postRoutes);
 
 
 const PORT = process.env.PORT || 3000;
