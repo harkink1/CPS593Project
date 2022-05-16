@@ -1,53 +1,53 @@
 body {
-    background-color: rgb(116, 46, 46);
-    color: black;
+  background-color: rgb(116, 46, 46);
+  color: black;
 }
 
 form {
-    border: 1px solid black;
-    background-color: aliceblue;
-    border-radius: 5px;
-    padding: 20px;
-    width: max-content;
-    margin: 100px auto 100px auto;
+  border: 1px solid black;
+  background-color: aliceblue;
+  border-radius: 5px;
+  padding: 20px;
+  width: max-content;
+  margin: 100px auto 100px auto;
 }
 
 input {
-    margin: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    margin: auto;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  margin: auto;
 }
 
 input[type="submit"] {
-    display: block;
-    background-color: grey;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 15px;
-    font-size: 18px;
-    text-transform: uppercase;
-    margin: 30px auto 10px auto;
+  display: block;
+  background-color: grey;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin: 30px auto 10px auto;
 }
 
 ul {
-    text-align: center;
-    list-style-type: none;
-    margin: auto;
-    padding: 0;
-    width: auto;
-    background-color: aliceblue;
+  text-align: center;
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
+  width: auto;
+  background-color: aliceblue;
 }
 
 li a {
-    display: block;
-    color: darkslategrey;
-    padding: 8px 16px;
-    text-decoration: none;
+  display: block;
+  color: darkslategrey;
+  padding: 8px 16px;
+  text-decoration: none;
 }
 
 li a:hover {
-    background-color: aliceblue;
-    color: black;
+  background-color: aliceblue;
+  color: black;
 }
