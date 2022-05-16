@@ -11,3 +11,42 @@ async function createTable() {
     await con.query(sql);
 }
 createTable();
+
+let getComments = async () => {
+    const sql = `SELECT * FROM comments`;
+    return await con.query(sql);
+  };
+  
+  async function getComment(comment) {
+    let sql;
+    if(comment.userId) {
+      sql = `SELECT * FROM comments
+        WHERE user_id = ${comment.userId}
+      `;
+    } else {
+      throw Error('No Comments!')
+    }
+  
+    return await con.query(sql);
+  }
+
+  async function createComment(comment) {
+  
+    const sql = `INSERT INTO comment (contents)
+      VALUES ("${comment.contents}")
+    `;
+  
+    const insert = await con.query(sql);
+    const newComment = await getComment(comment);
+    return newComment[0];
+  }
+
+  async function deleteComment(commentId) {
+    const sql = `DELETE FROM comments 
+      WHERE comment_id = ${commentId}
+    `;
+    await con.query(sql);
+   
+  }
+
+  module.exports = { getComments, createComment, deleteComment,  getComment, createTable };  
