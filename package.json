@@ -1,7 +1,7 @@
 {
   "name": "cps593-project",
   "version": "1.0.0",
-  "description": "final project for CPS593",
+  "description": "A simple social media app",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
@@ -11,20 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/harkink1/CPS593Project.git"
   },
-  "keywords": [
-    "social",
-    "media"
-  ],
-  "author": "Kyle Harkin",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/harkink1/CPS593Project/issues"
   },
   "homepage": "https://github.com/harkink1/CPS593Project#readme",
   "dependencies": {
-    "express": "^4.18.1"
-  },
-  "devDependencies": {
+    "express": "^4.18.1",
     "nodemon": "^2.0.16"
   }
 }
