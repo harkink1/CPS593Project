@@ -63,8 +63,6 @@ async function createTable() {
   let sql = `CREATE TABLE IF NOT EXISTS users (
     user_id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(255) NOT NULL UNIQUE,
-    user_weight NUMERIC,
-    user_height NUMERIC,
     user_password VARCHAR(255),
     CONSTRAINT user_pk PRIMARY KEY(user_id)
   )`;

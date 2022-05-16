@@ -33,7 +33,7 @@ router
   .delete('/delete', (req, res) => {
     try {
       User.deleteUser(req.body.userId);
-      res.send({success: "We'll miss you...:("});
+      res.send({success: "Goodbye"});
     } catch(error) {
       res.status(401).send({message: error.message});
     }

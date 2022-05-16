@@ -31,13 +31,11 @@ if(regForm) regForm.addEventListener('submit', register);
 function register(e) {
   e.preventDefault();
 
-  const firstname = document.getElementById("firstName").value;
-  const lastname = document.getElementById("lastName").value;
-  const birthdate = document.getElementById("birthDate").value;
+  
   const name = document.getElementById("username").value;
   const pswd = document.getElementById("pswd").value;
 
-  fetchData('/users/register', {username: name, password: pswd, firstName: firstname, lastName: lastname, birthDate: birthdate}, "POST")
+  fetchData('/users/register', {username: name, password: pswd}, "POST")
   .then((data) => {
     if(!data.message) {
       setCurrentUser(data);

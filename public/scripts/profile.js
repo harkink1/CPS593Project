@@ -9,7 +9,7 @@ if(!user) window.location.href = "login.html";
 
 let profile = document.getElementById("profile");
 profile.innerHTML = `
-  <h2>Current Profile: ${user.userName}</h2>
+  <h2>Current Profile: ${user.username}</h2>
   <div>
     <p class="error"></p>
     <button class="btn" id="edit">Edit Info</button>
@@ -28,16 +28,7 @@ function editProfile() {
       <p class="error"></p>
       <h2>Edit Profile</h2>
       <label for="username">Edit Username</label>
-      <input type="text" name="username" id="username" placeholder="${user.userName}">
-      <br>
-      <label for="firstName">Edit First Name</label>
-      <input type="text" name="firstName" id="firstName" placeholder="${user.firstName}">
-      <br>
-      <label for="lastName">Edit Last Name</label>
-      <input type="text" name="lastName" id="lastName" placeholder="${user.lastName}">
-      <br>
-      <label for="birthDate">Edit Birth Date</label>
-      <input type="text" name="birthDate" id="birthDate" placeholder="${user.birthDate}">
+      <input type="text" name="username" id="username" placeholder="${user.username}">
       <br>
       <input type="submit" value="Submit">
     </form>
@@ -63,11 +54,11 @@ function editAccount(e) {
   e.preventDefault();
 
   let userName = document.getElementById("username").value;
-  if(userName === user.userName) {
+  if(userName === user.username) {
     let err = "No changes made";
     document.querySelector("#editForm p.error").innerHTML = err;
   } else {
-    fetchData('/users/edit', {userId: user.userId, userName: userName}, "PUT")
+    fetchData('/users/edit', {userId: user.user_id, userName: userName}, "PUT")
     .then((data) => {
       if(!data.message) {
         removeCurrentUser();
@@ -86,8 +77,8 @@ function editAccount(e) {
 }
 
 function deleteAccount() {
-  if(confirm('Are you sure you want to delete your account???')) {
-    fetchData('/users/delete', {userId: user.userId}, "DELETE")
+  if(confirm('Confirm Account Deletion?')) {
+    fetchData('/users/delete', {userId: user.user_id}, "DELETE")
     .then((data) => {
       if(!data.message) {
         console.log(data.success)
