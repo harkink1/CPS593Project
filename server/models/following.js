@@ -41,7 +41,7 @@ let getFollows = async () => {
     return newFollow[0];
   }
 
-  async function removeFollow(followId) {
+  async function removeFollow(followId) { //remove a follow
     const sql = `DELETE FROM following 
       WHERE follow_id = ${followId}
     `;

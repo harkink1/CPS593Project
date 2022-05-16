@@ -17,20 +17,20 @@ let getComments = async () => {
     return await con.query(sql);
   };
   
-  async function getComment(comment) {
+  async function getComment(comment) { //retrieve all comments
     let sql;
-    if(comment.userId) {
+    if(comment.userId) { //if comments for id get them
       sql = `SELECT * FROM comments
         WHERE user_id = ${comment.userId}
       `;
     } else {
-      throw Error('No Comments!')
+      throw Error('No Comments!') //otherwise return no comments
     }
   
     return await con.query(sql);
   }
 
-  async function createComment(comment) {
+  async function createComment(comment) { //create a new comment
   
     const sql = `INSERT INTO comments (contents)
       VALUES ("${comment.contents}")
@@ -41,7 +41,7 @@ let getComments = async () => {
     return newComment[0];
   }
 
-  async function deleteComment(commentId) {
+  async function deleteComment(commentId) { //delet old comment
     const sql = `DELETE FROM comments 
       WHERE comment_id = ${commentId}
     `;

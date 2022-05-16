@@ -14,7 +14,6 @@ function create(e) { //this add a follow entry to the databse, NULL value howeve
     fetchData('/following/create', {text}, "POST")
     .then((data) => {
       if(!data.message) {
-        //setCurrentUser(data);
         window.location.href = "following.html";
       }
     })

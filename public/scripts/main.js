@@ -1,5 +1,6 @@
+//most of this file is based/from the notes
 const nav = document.querySelector('nav');
-if(getCurrentUser()) {
+if(getCurrentUser()) { //header nav barinfo based on notes
   nav.innerHTML = `
     <ul>
       <li><a href="post.html">Post</a></li>
