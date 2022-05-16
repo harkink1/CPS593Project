@@ -3,7 +3,7 @@ const con = require("./db_connect");
 async function createTable() {
     let sql = `CREATE TABLE IF NOT EXISTS following (
       follow_id INT NOT NULL AUTO_INCREMENT,
-      count INT,
+      count VARCHAR(255),
       user_id INT,
       CONSTRAINT follow_pk PRIMARY KEY(follow_id),
       CONSTRAINT follow_fk FOREIGN KEY(user_id) REFERENCES users(user_id)
@@ -30,10 +30,10 @@ let getFollows = async () => {
     return await con.query(sql);
   }
 
-  async function addFollow(follow) { //add a new follow
+  async function createFollow(follow) { //add a new follow
   
     const sql = `INSERT INTO following (count)
-      VALUES ("${follow.followId}")
+      VALUES ("${follow.count}")
     `;
   
     const insert = await con.query(sql);
@@ -48,4 +48,4 @@ let getFollows = async () => {
     await con.query(sql);
    
   }
-  module.exports = { getFollows, addFollow, getFollow, removeFollow, createTable };
+  module.exports = { getFollows, createFollow, getFollow, removeFollow, createTable };

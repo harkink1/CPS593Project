@@ -16,7 +16,7 @@ router
     try {
       const post = await Post.createPost(req.body);
       console.log(post)
-      res.send({...post, contents})
+      res.send(contents)
     } catch(error) {
       res.status(401).send({message: error.message});
     }

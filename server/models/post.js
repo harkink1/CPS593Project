@@ -1,4 +1,3 @@
-const { post } = require("../routes/user");
 const con = require("./db_connect");
 
 async function createTable() {
@@ -7,7 +6,7 @@ async function createTable() {
       contents VARCHAR(255),
       user_id INT,
       CONSTRAINT posts_pk PRIMARY KEY(post_id),
-      CONSTRAINT user_fk FOREIGN KEY(user_id) REFERENCES users(user_id)
+      CONSTRAINT posts_fk FOREIGN KEY(user_id) REFERENCES users(user_id)
     )`;
     await con.query(sql);
 }

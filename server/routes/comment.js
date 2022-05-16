@@ -1,6 +1,7 @@
 const express = require('express');
 const Comment = require('../models/comment');
 const router = express.Router();
+
 router
   .get('/', async (req, res) => {
     try {
@@ -15,7 +16,7 @@ router
     try {
       const comment = await Comment.createComment(req.body);
       console.log(comment)
-      res.send({...comment, contents})
+      res.send(contents)
     } catch(error) {
       res.status(401).send({message: error.message});
     }

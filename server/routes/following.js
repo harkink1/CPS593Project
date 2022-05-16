@@ -1,6 +1,7 @@
 const express = require('express');
 const Follow = require('../models/following');
 const router = express.Router();
+
 router
   .get('/', async (req, res) => {
     try {
@@ -11,11 +12,11 @@ router
     }
   })
 
-  .post('/add', async (req, res) => {
+  .post('/create', async (req, res) => {
     try {
-      const follow = await Follow.addFollow(req.body);
+      const follow = await Follow.createFollow(req.body);
       console.log(follow)
-      res.send({...follow, count})
+      res.send(count)
     } catch(error) {
       res.status(401).send({message: error.message});
     }

@@ -32,7 +32,7 @@ let getComments = async () => {
 
   async function createComment(comment) {
   
-    const sql = `INSERT INTO comment (contents)
+    const sql = `INSERT INTO comments (contents)
       VALUES ("${comment.contents}")
     `;
   

@@ -9,7 +9,7 @@ const postRoutes = require('./server/routes/post');
 const commentRoutes = require('./server/routes/comment');
 const followRoutes = require('./server/routes/following');
 
-app.use(express.json()); //To parse JSON bodies (Applicable for Express 4.16+)
+app.use(express.json()); 
 
 app.use(express.static(__dirname + "/public"));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public', 'login.html')))

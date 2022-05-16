@@ -1,27 +1,25 @@
 import 
-{ fetchData, getCurrentUser, setCurrentUser, removeCurrentUser } 
+{ fetchData} 
 from './main.js'
 
 const postForm = document.getElementById("post-form");
 if(postForm) postForm.addEventListener('submit', create);
 
-
-function create(e) {
+//first HTTP fron-end call
+function create(e) { //this add a post entry to the posts database, but not producing any values
     e.preventDefault();
   
-    const name = document.getElementById("post").value;
+    const text = document.getElementById("post").value;
   
-    fetchData('/posts/create', {content: name, }, "POST")
+    fetchData('/posts/create', {text}, "POST")
     .then((data) => {
       if(!data.message) {
-        setCurrentUser(data);
-        window.location.href = "post.html";
+        window.location.href = "posts.html";
       }
     })
     .catch((error) => {
       const errText = error.message;
       document.querySelector("#post-form p.error").innerHTML = errText;
-      document.getElementById("pswd").value = "";
       console.log(`Error! ${errText}`)
     });
   }

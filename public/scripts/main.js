@@ -3,6 +3,7 @@ if(getCurrentUser()) {
   nav.innerHTML = `
     <ul>
       <li><a href="post.html">Post</a></li>
+      <li><a href="posts.html">Posts</a></li>
       <li><a href="comments.html">Comment</a></li>
       <li><a href="following.html">Following</a></li>
       <li><a href="profile.html">Profile</a></li>
