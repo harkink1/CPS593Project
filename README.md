@@ -41,11 +41,12 @@ The current version has the following:
 * Node Server: Express, Nodemon
 * mySQL
 ## Entity Relationship Diagram <br/>
-![](images/edited_erd.PNG) <br/>
+![image](https://user-images.githubusercontent.com/95648186/168826819-77e81143-9548-471b-ac14-3cdbc6e7c5d9.png)
 ### Description of Entities: <br/>
-1. User -> this is the user profile for the site -> contains a unique ID number, username and password
-2. Post -> this is an entity that a single user can create many of -> contains a unique ID number, contents, and is related to the userID
-3. Comment -> this is an entity that a single user can create many of 
+1. User -> this is the user profile for the site -> contains a unique ID , username and password <br/>
+2. Post -> this is an entity that a single user can create many of -> contains a unique ID , contents, and is related to the userID <br/>
+3. Comment -> this is an entity that a single user can create many of under many posts -> contains a unique ID, contents, and is related to the userID and postID -> forgot to implement postID as foreign key in finished website! <br/>
+4. Following -> this is an entity that a single user can create many of -> contains a unique ID, count number, and is related to the userID<br/>
 
 
 ## How to Use <br/>
